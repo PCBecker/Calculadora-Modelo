@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragments.LambertFragment">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:alpha="0.5"
+        android:background="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/visor2Lambert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:ellipsize="start"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:gravity="end"
+        android:hint="@string/visor1"
+        android:lines="4"
+        android:minLines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="false"
+        android:textColor="@color/white"
+        android:textColorHint="#757575"
+        android:textSize="24sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.5"
+        android:background="@drawable/ic_launcher_background" />
+
+
+    <TextView
+        android:id="@+id/visor1Lambert"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_margin="10dp"
+        android:ellipsize="start"
+        android:gravity="end"
+        android:hint="@string/visor2"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="#757575"
+        android:textSize="21sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.5"
+        android:background="@drawable/ic_launcher_background" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+        android:shrinkColumns="*">
+
+        <LinearLayout
+            android:id="@+id/button_row_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/visor2Lambert"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <Button
+                android:id="@+id/voltar"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/voltar"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:cornerRadius="18dp"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/eqgrau2"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/eqgrau2"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:cornerRadius="18dp"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"/>
+
+            <Button
+                android:id="@+id/eqgrau3"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/eqgrau3"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:cornerRadius="18dp"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_margin="5dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clearText"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:text="@string/clear_text"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/red"
+                app:cornerRadius="18dp"  />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clear"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:text="@string/backspace"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/blacks"
+                app:cornerRadius="18dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/help"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/help"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/blacks"
+                app:cornerRadius="18dp" />
+        </LinearLayout>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/seven"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/seven"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/eight"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/eight"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/nine"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/nine"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/sinal"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/sinal"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="OnClick,VisualLintButtonSize,SpeakableTextPresentCheck" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/four"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/four"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/five"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/five"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/six"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/six"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/botaoTeste"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize,SpeakableTextPresentCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/three"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/three"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/two"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/two"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/one"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="40dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/one"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="@string/one,VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/botaoTeste1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize,SpeakableTextPresentCheck" />
+
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/zero"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="2"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/zero"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/ponto"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="50dp"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/ponto"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/calcular"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:height="50dp"
+                android:backgroundTint="@color/green"
+                android:padding="2dp"
+                android:text="@string/calcular"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="VisualLintButtonSize" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.5"
+            android:background="@drawable/ic_launcher_background" />
+
+    </TableLayout>
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph_lambert"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#222222"/>
+
+</LinearLayout>
